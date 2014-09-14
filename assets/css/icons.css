@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.icon-shadow-user1{					background-image:url(../images/icon_shadow/user/user.png); 		background-size:20px 20px;	background-repeat:no-repeat; background-position:center center;}
+.list-pencil{		background-image:url(../images/lists/pencil_16.png); }
+
+.icon-shadow-user2{					background-image:url(../images/icon_shadow/user/usercomment.png); 		background-size:20px 20px;	background-repeat:no-repeat; background-position:center center;}
+.icon-shadow-user3{					background-image:url(../images/icon_shadow/user/user3.png); 		background-size:20px 20px;	background-repeat:no-repeat; background-position:center center;}
+.list-document{		background-image:url(../images/lists/document_16.png);		}
