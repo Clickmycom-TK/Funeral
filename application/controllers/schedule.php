@@ -54,10 +54,12 @@ class schedule extends CI_Controller {
             <br/>
           
 
-                 <table cellspacing='0' class='table'>
-                      <tr>
-                          <th >วัน / เดือน / ปี</th>
-                          <th class='table-title'>เจ้าภาพ</th>
+                 <table cellspacing='0' class='table' style='font-size: 14px'>
+                      <tr >
+                          <th >วัน/เดือน/ปี</th>
+              
+                          <th >เวลา</th>
+                          <th >เจ้าภาพ</th>
                          
                       </tr>
                           
@@ -90,7 +92,15 @@ class schedule extends CI_Controller {
                                     $Year=$dd->Year;
                                     $Time=$dd->Time;
                                     echo "<tr>";
-                                      echo "<td ><center>"."วัน".$Date."&nbsp;&nbsp;&nbsp;ที่&nbsp;&nbsp;&nbsp;".$Num_date."&nbsp;&nbsp;&nbsp;เดือน".$Mounth."&nbsp;&nbsp;&nbsp;พ.ศ.".$Year."&nbsp;&nbsp;&nbsp;เวลา&nbsp;".$Time."&nbsp;น."."</center></td>";
+                                      echo "<td >
+                                      
+                                      <center>".$Date."&nbsp;&nbsp;&nbsp;ที่&nbsp;&nbsp;&nbsp;".$Num_date."&nbsp;&nbsp;&nbsp;เดือน".$Mounth."&nbsp;&nbsp;&nbsp;พ.ศ.".$Year."</center></td>";
+                                   
+                                      // echo "<td><center>"."ที่่&nbsp;&nbsp;".$Num_date."</center></td>";
+                                      // echo "<td><center>"."เดือน่&nbsp;&nbsp;".$Mounth."</center></td>";
+                                      // echo "<td><center>"."พ.ศ.&nbsp;&nbsp;".$Year."</center></td>";
+                                      echo "<td><center>"."".$Time."</center></td>";
+                                      
                                       echo "<td>".$Relate_name."</td>";
                                     echo "</tr>";
 

@@ -211,7 +211,7 @@ var op;
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กรุณาทำการระบุข้อมูลให้ถูกต้อง</p>
         </div>
 
-
+        
         <div class='container slider-wrapper'>
            <div class='slider-container'>
                <div id='slider' class='swipe'>
@@ -220,10 +220,10 @@ var op;
                            <div class='slider-image'>
                             
                                 <div class='swipe-img'>
-                                  <img class="swipe-img " src="<?php echo base_url(); ?>assets/images/slider/2.jpg" alt="logo">
+                                  <img class="swipe-img " src="<?php echo base_url(); ?>assets/images/slider/watben.jpg" alt="logo">
                                     
                                 </div> 
-                               <p class='swipe-text'>ค้นหา ผู้เสียชีวิต</p>
+                               <p class='swipe-text'>วัดฟหกาสดห่กาด่หกสด</p>
                            </div>
                        </li>
                        
@@ -235,35 +235,42 @@ var op;
 
   
             
-                    <fieldset>                        
-                        <div class='formFieldWrap'>
-                          <?php echo form_open("search_people/send"); ?>
-                            <label class='field-title contactNameField' >คำขึ้นต้น:<span>(required)</span></label>
-                            <select class='contactField requiredField requiredEmailField' name='thisFname'>
-                                  <option value='เด็กชาย'>เด็กชาย</option>
-                                  <option value='เด็กหญิง'>เด็กหญิง</option>
-                                  <option value='นาย'>นาย</option>
-                                  <option value='นาง'>นาง</option>
-                                  <option value='นางสาว'>นางสาว</option>
-                            </select>
-                        </div>
-                        <div class='formFieldWrap'>
-                            <label class='field-title contactEmailField' >ชื่อ: <span>(required)</span></label>
-                            <input type='text' name='Fname_people' value='ชัยรบ'  class='contactField requiredField requiredEmailField' />
-                        </div>
-                        <div class='formTextareaWrap'>
-                            <label class='field-title contactMessageTextarea' >นามสกุล: <span>(required)</span></label>
-                            <input type='text' name='Lname_people' value='ศรีทิน'   class='contactField requiredField requiredEmailField'/>
-                        </div>
-                       
-                        <div class='formSubmitButtonErrorsWrap'>
-                              <input type="submit" class="buttonWrap black pageload-link-main" name="btn_search" value="เริ่มทำการค้นหา" />
-                              
+            <?php
+                 echo "
 
-                          <?php echo form_close(); ?>
-                          
-                        </div>   
-                    </fieldset>
+
+                   <table cellspacing='0' class='table' style='font-size: 14px'>
+                                        <tr >
+                                            <th >วัน/เดือน/ปี</th>
+                                            <th >ผู้ขอเป็นเจ้าภาพงาน</th>
+                                            <th width=20%>สถานะการอนุมัติ</th>
+                                        </tr>
+
+                                        <tr>
+                                          <td>asdfsfaf</td>
+                              <td>asdfsfaf</td>
+                              <td><strong class='decrease'>";
+                                          
+                                  echo"<font color='#CD5C5C'>รออนุมัติ</font></strong>
+                              </td>
+                                        </tr> 
+
+                                          <tr>
+                                          <td>asdfsfaf</td>
+                              <td>asdfsfaf</td>
+                              <td><strong class='decrease'>";
+                                          
+                                  echo"<font color='#548B54'>อนุมัติ</font></strong>
+                              </td>
+                                        </tr>  
+
+
+
+
+                   </table>
+
+                ";
+                ?>
                    
   </div>
 

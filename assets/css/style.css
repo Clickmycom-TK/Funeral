@@ -244,6 +244,10 @@ h5{	font-weight:800; font-size: 19px; font-family:'Open Sans', sans-serif!import
 .user-icon{			background-image:url(../images/icon_shadow/misc/user.png);		background-position:0 13px;}
 .tot{			background-image:url(../images/icon_shadow/member/tables.png);		background-position:0 13px;}
 
+.fb{			background-image:url(../images/icon_shadow/social/facebook.png);		background-position:0 13px;}
+
+
+
 .features-icon{		background-image:url(../images/icon_shadow/settings/cog4.png);	background-position:0 14px;}
 .gallery-icon{		background-image:url(../images/icon_shadow/misc/alert.png);	background-position:0 13px;}
 .portfolio-icon{	background-image:url(../images/icon_shadow/media/image3.png);	background-position:0 13px;}
