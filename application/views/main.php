@@ -83,6 +83,10 @@ var op;
           $('#page-1').load(url1,{});
     });
 
+    $('#sing').click(function(){
+         var url1=$('#url1').val()+'index.php/sing';
+          $('#page-1').load(url1,{});
+    });
 
     
 
@@ -463,16 +467,9 @@ var op;
       <center><?php echo image_asset('misc/logow.png'); ?>
               <?php 
 
-                 if($this->session->userdata('session_Users_id_Users_My_Dead')!=null){
-                    echo 
-
-                     $this->session->userdata('session_First_name_Dead').$this->session->userdata('session_Fname_Dead').'&nbsp;&nbsp;'.$this->session->userdata('session_Lname_Dead')
-
-                    ;
-                 }
-                 else{
+                
                   echo "";
-                 }
+                 
                   
 
            ?>
@@ -532,10 +529,17 @@ var op;
 
            <div class="menu-item">
               <strong class="tot"></strong>
-              <a class="menu-disabled pageload-link" id="schedule" >กำหนดการณ์</a>
-
+              <a class="menu-disabled  deploy-submenu"  >หมายกำหนดการณ์</a>
+              <div class="clear"></div>
+              <div class="submenu">
+                  <a href="#" class="pageload-link1 pageload-link" id="schedule">เจ้าภาพงานในแต่ละวัน</a>    <em class="submenu-decoration"></em>
+                  <a href="#" class="pageload-link1 pageload-link"  id="sing">ยื่นคำขอเป็นเจ้าภาพ</a>    <em class="submenu-decoration"></em>
+              </div>
           </div> 
           
+
+             
+
          
           <div class="menu-item">
               <strong class="features-icon"></strong>
@@ -545,9 +549,11 @@ var op;
 
            <div class="menu-item">
               <strong class="home-icon"></strong>
-                     <a href="search_people" class="menu-disabled">ค้นหาผู้เสียชีวิต</a>  
+                     <a href="search_people" class="menu-disabled">ศาลาการเปรียญ</a>  
           </div> 
           
+       
+
           
         </div>
       </div>
@@ -560,13 +566,78 @@ var op;
           <a href="#" class="update-box update-blog">String<br>Time</a>          <div class="sidebar-decoration"></div>
           <a href="#" class="update-box update-folio">String<br>Time</a>      <div class="sidebar-decoration"></div>
       </div> -->
+       <div align="center">
+
+      <?php
+           $check_hour=date("H");
+           if($check_hour>=16&&$check_hour<18){
+             $textdate_chang="สวัสดีตอนเย็นครับ";
+             $img_chang=image_asset('icon_shadow/icon-day/yenyen.png');
+           }
+
+           if($check_hour>=18&&$check_hour<20){
+            if($check_hour>=18&&$check_hour<19){
+                $textdate_chang="สวัสดีตอนใกล้ค่ำครับ";
+              }
+              else{
+                 $textdate_chang="สวัสดีตอนค่ำครับ";
+              }
+
+            
+             $img_chang=image_asset('icon_shadow/icon-day/kum.png');
+           }
+
+           if($check_hour>=20&&$check_hour<=23){
+             $textdate_chang="สวัสดีตอนค่ำครับ";
+             $img_chang=image_asset('icon_shadow/icon-day/night.png');
+           }
+
+           if($check_hour>=00&&$check_hour<05){
+             $textdate_chang="สวัสดีตอนค่ำครับ";
+             $img_chang=image_asset('icon_shadow/icon-day/night.png');
+           }
+
+
+           if($check_hour>=05&&$check_hour<07){
+               $textdate_chang="สวัสดีตอนเช้าครับ";
+             $img_chang=image_asset('icon_shadow/icon-day/kum.png');
+           }
+
+           if($check_hour>=07&&$check_hour<11){
+             $textdate_chang="สวัสดีตอนเช้าครับ";
+             $img_chang=image_asset('icon_shadow/icon-day/morning.png');
+           }
+
+           if($check_hour>=11&&$check_hour<16){
+              if($check_hour>=12&&$check_hour<13){
+                $textdate_chang="สวัสดีตอนเที่ยงครับ";
+              }
+              else{
+                 $textdate_chang="สวัสดีตอนบ่ายครับ";
+              }
+             
+             $img_chang=image_asset('icon_shadow/icon-day/sun.png');
+           }
+
+
+            
+          ?>
+
+      <p class="textday"><?php echo "$textdate_chang";?> ขณะนี้เวลา </p>
       
+        <div id="css_time_run"> </div><br/>
+        <?php echo "$img_chang";?>
+
+
+
+
+      </div>
       <p class="sidebar-copyright center-text">แชร์ข้อมูลเข้า โซเชียลเน็ตเวิร์ค </p>
-      <a href="http://www.facebook.com/sharer.php?u=<?php echo base_url().'index.php/search_people'?>&t=<?php 
+      <div class="menu-item">
+          <strong class="fb"></strong>
+                     <a href="http://www.facebook.com/sharer.php?u=<?php echo base_url().'index.php/search_people'?>&t=<?php 
 
        if($this->session->userdata('session_Users_id_Users_My_Dead')!=null){
-              echo 
-
                $this->session->userdata('session_First_name_Dead').$this->session->userdata('session_Fname_Dead').'&nbsp;&nbsp;'.$this->session->userdata('session_Lname_Dead');
            }
            else{
@@ -575,28 +646,12 @@ var op;
 
 
 
-        ?>" class="sidebar-button"><em class="sidebar-button-facebook">FACEBOOK</em></a>
-
-      <a href="http://twitter.com/share?text=
-
-      <?php 
-
-       if($this->session->userdata('session_Users_id_Users_My_Dead')!=null){
-              echo 
-
-               trim($this->session->userdata('session_First_name_Dead')).trim($this->session->userdata('session_Fname_Dead')).'&nbsp;&nbsp;'.trim($this->session->userdata('session_Lname_Dead'));
-           }
-           else{
-            echo "";
-           }
+        ?>" class="menu-disabled">Facebook</a>  
+      </div> 
 
 
+  
 
-        ?>
-
-      " class="sidebar-button"><em class="sidebar-button-twitter">TWITTER</em></a>
-      <a href="tel:0854067588" class="sidebar-button"><em class="sidebar-button-rss">ติดต่อผู้ดูแลระบบ</em></a>   
-      <div class="clear"></div>
       
   </div>
 </div>
@@ -714,12 +769,7 @@ var op;
 
       <div class="menu">         
         <div id="pagewrap1" class="pagewrap1">  
-          <div class="menu-item">
-              <strong class="vdo_tum"></strong>
-              <a class="menu-disabled deploy-submenu pageload-link1"  id="wat" href="#">รับฟังธรรมมะ</a>
-              <div class="clear"></div>
-             
-          </div> 
+        
           
         
 
@@ -744,13 +794,45 @@ var op;
 
           <div class="menu-item">
               <strong class="features-icon"></strong>
-              <a class="menu-disabled deploy-submenu "  href="#">จัดการระบบ </a>
+              <a class="menu-disabled deploy-submenu "  href="#">จัดการประวัติผู้เสียชีวิต </a>
               <div class="clear"></div>
               <div class="submenu">
                   <a href="#" class="pageload-link1" id="add_to_system">บันทึก: ข้อมูลผู้เสียชีวิต</a>    <em class="submenu-decoration"></em>
-                  <a href="#" class="pageload-link1" id="add_to_system_event">บันทึก: สวดพระอภิธรรมศพ</a>    <em class="submenu-decoration"></em>
+                  
+                  <a href="#" class="pageload-link1" id="edit_">แก้ไข: ข้อมูลผู้เสียชีวิต</a>    <em class="submenu-decoration"></em>
+                  
               </div>
           </div> 
+
+
+          
+
+          <div class="menu-item">
+              <strong class="features-icon"></strong>
+              <a class="menu-disabled deploy-submenu "  href="#">จัดการศาลาการเปรียญ </a>
+              <div class="clear"></div>
+              <div class="submenu">
+                  <a href="#" class="pageload-link1" id="X1">บันทึก: ศาลาการเปรียญ</a>    <em class="submenu-decoration"></em>
+                  
+                  <a href="#" class="pageload-link1" id="XX">แก้ไข: ศาลาการเปรียญ</a>    <em class="submenu-decoration"></em>
+                  
+              </div>
+          </div> 
+
+          
+          <div class="menu-item">
+              <strong class="features-icon"></strong>
+              <a class="menu-disabled deploy-submenu "  href="#">จัดการหมายกำหนดการ </a>
+              <div class="clear"></div>
+              <div class="submenu">
+                  <a href="#" class="pageload-link1" id="X1">บันทึก: ศาลาการเปรียญ</a>    <em class="submenu-decoration"></em>
+                  
+                  <a href="#" class="pageload-link1" id="">เจ้าภาพงานแต่ละวัน</a>    <em class="submenu-decoration"></em>
+                  
+              </div>
+          </div> 
+
+
       </div>
          
 
